@@ -6,610 +6,602 @@
     <title>GarzMarket - Top Up Game Online</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #1a73e8;
-            --primary-dark: #0d47a1;
-            --secondary: #64b5f6;
-            --light: #e3f2fd;
-            --dark: #0d2c54;
-            --success: #4caf50;
-            --warning: #ff9800;
-            --danger: #f44336;
-            --gray: #f5f5f5;
-            --text: #333;
-            --text-light: #757575;
-            --accent: #ff6b6b;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
-        body {
-            background: linear-gradient(135deg, var(--light) 0%, var(--secondary) 100%);
-            color: var(--text);
-            min-height: 100vh;
-            padding-bottom: 40px;
+
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #64b5f6;
+            --accent: #ff6d00;
+            --light: #f5f9ff;
+            --dark: #0a192f;
+            --success: #4caf50;
+            --danger: #f44336;
+            --gray: #78909c;
         }
-        
+
+        body {
+            background: linear-gradient(135deg, #0a192f, #1a3a5f);
+            color: var(--light);
+            min-height: 100vh;
+            position: relative;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
+
         /* Header Styles */
         header {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+            background: rgba(10, 25, 47, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 15px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--secondary);
         }
-        
-        .header-container {
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
-        
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 28px;
+            background: linear-gradient(to right, #64b5f6, #1a73e8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-weight: 700;
+            letter-spacing: 1px;
         }
-        
-        .logo i {
-            font-size: 2rem;
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        
-        nav a:hover, nav a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .user-actions {
+
+        .nav-buttons {
             display: flex;
             gap: 15px;
         }
-        
+
         .btn {
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: none;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        
-        .btn-login {
-            background-color: transparent;
-            border: 2px solid white;
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
         }
-        
-        .btn-login:hover {
-            background-color: white;
-            color: var(--primary);
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
         }
-        
-        .btn-register {
-            background-color: var(--secondary);
-            color: var(--dark);
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.6);
         }
-        
-        .btn-register:hover {
-            background-color: #90caf9;
-            transform: translateY(-2px);
-        }
-        
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            padding: 80px 0 50px;
             text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 40px;
-            border-radius: 0 0 20px 20px;
+            background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(10, 25, 47, 0.7);
+            border-radius: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(10, 25, 47, 0.9) 90%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
         .hero h2 {
             font-size: 3rem;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, #64b5f6, #bb86fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0f7fa;
             max-width: 700px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .btn-hero {
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn-hero:hover {
-            background-color: #90caf9;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Games Section */
+
+        /* Game Categories */
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin: 40px 0 30px;
+            font-size: 2.2rem;
             position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--dark);
             display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
             height: 4px;
-            background-color: var(--primary);
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
             border-radius: 2px;
         }
-        
-        .games-grid {
+
+        /* Game Cards */
+        .game-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-top: 30px;
         }
-        
+
         .game-card {
-            background-color: white;
-            border-radius: 10px;
+            background: rgba(20, 40, 80, 0.7);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        
+
         .game-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(26, 115, 232, 0.4);
+            border-color: var(--secondary);
         }
-        
-        .game-image {
-            height: 150px;
-            background-color: var(--gray);
-            background-position: center;
-            background-size: cover;
-        }
-        
-        .game-content {
+
+        .game-header {
             padding: 20px;
-        }
-        
-        .game-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary-dark);
-        }
-        
-        .game-content p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        .btn-game {
-            background-color: var(--primary);
-            color: white;
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-        }
-        
-        .btn-game:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        /* Form Section */
-        .form-container {
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .form-title {
             text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-dark);
+            background: rgba(26, 115, 232, 0.2);
+            border-bottom: 1px solid rgba(100, 181, 246, 0.3);
         }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+
+        .game-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
             color: var(--dark);
         }
-        
-        .form-control {
+
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .game-body {
+            padding: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #bbdefb;
+        }
+
+        .input-group input {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #ddd;
             border-radius: 8px;
+            border: 1px solid rgba(100, 181, 246, 0.5);
+            background: rgba(10, 25, 47, 0.5);
+            color: white;
             font-size: 1rem;
-            transition: all 0.3s;
         }
-        
-        .form-control:focus {
-            border-color: var(--primary);
+
+        .input-group input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.3);
         }
-        
+
         .diamond-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            margin-bottom: 25px;
+            margin: 20px 0;
         }
-        
-        .diamond-card {
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
+
+        .diamond-title {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #bbdefb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .diamond-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .diamond-option {
+            background: rgba(10, 25, 47, 0.7);
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            border-radius: 8px;
+            padding: 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
         }
-        
-        .diamond-card:hover, .diamond-card.selected {
-            border-color: var(--primary);
-            background-color: rgba(26, 115, 232, 0.05);
+
+        .diamond-option:hover {
+            background: rgba(26, 115, 232, 0.3);
+            border-color: var(--secondary);
         }
-        
-        .diamond-card h4 {
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-        }
-        
-        .diamond-card p {
-            color: var(--success);
-            font-weight: 700;
+
+        .diamond-amount {
+            font-weight: 600;
+            color: white;
             font-size: 1.1rem;
         }
-        
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 25px;
+
+        .diamond-price {
+            color: #ffcc80;
+            font-size: 0.9rem;
         }
-        
-        .payment-method {
-            flex: 1;
-            min-width: 120px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
+
+        .buy-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        
-        .payment-method:hover, .payment-method.selected {
-            border-color: var(--primary);
-            background-color: rgba(26, 115, 232, 0.05);
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #002171);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 115, 232, 0.4);
         }
-        
-        .payment-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
+
+        /* Voucher Section */
         .voucher-section {
-            background-color: var(--light);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            background: rgba(20, 40, 80, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 50px 0;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        
-        .voucher-section h3 {
+
+        .voucher-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .voucher-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .voucher-title {
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            color: var(--primary-dark);
+            color: #bbdefb;
         }
-        
+
+        .voucher-desc {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .voucher-code {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px dashed var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .voucher-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
         .voucher-input {
             display: flex;
             gap: 10px;
         }
-        
+
         .voucher-input input {
             flex: 1;
-        }
-        
-        .btn-apply {
-            background-color: var(--warning);
-            color: white;
-        }
-        
-        .btn-apply:hover {
-            background-color: #fb8c00;
-        }
-        
-        .summary {
-            background-color: var(--gray);
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-        
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .total {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-            border-top: 2px solid #ddd;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-        
-        .btn-checkout {
-            background-color: var(--success);
-            color: white;
-            width: 100%;
             padding: 15px;
-            font-size: 1.2rem;
-            font-weight: 700;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 181, 246, 0.5);
+            background: rgba(10, 25, 47, 0.5);
+            color: white;
+            font-size: 1rem;
         }
-        
-        .btn-checkout:hover {
-            background-color: #388e3c;
+
+        .voucher-input button {
+            padding: 15px 25px;
+            background: linear-gradient(135deg, var(--accent), #e65100);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .voucher-input button:hover {
+            background: linear-gradient(135deg, #e65100, #bf360c);
             transform: translateY(-2px);
         }
-        
-        /* Featured Game Banner */
-        .featured-game {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--dark) 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
+
+        /* Transaction History */
+        .history-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             display: flex;
             align-items: center;
-            gap: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            z-index: 90;
+            transition: all 0.3s ease;
         }
-        
-        .featured-content {
-            flex: 1;
+
+        .history-btn:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 25px rgba(26, 115, 232, 0.5);
         }
-        
-        .featured-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+
+        .history-panel {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            max-height: 400px;
+            background: rgba(20, 40, 80, 0.95);
+            border-radius: 15px;
+            border: 1px solid rgba(100, 181, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            z-index: 95;
+            backdrop-filter: blur(10px);
+            display: none;
+            overflow: hidden;
         }
-        
-        .featured-content p {
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
-            line-height: 1.6;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(100, 181, 246, 0.3);
         }
-        
-        .featured-image {
-            flex: 1;
-            height: 250px;
+
+        .history-title {
+            font-size: 1.4rem;
+            color: #bbdefb;
+        }
+
+        .close-history {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .close-history:hover {
+            color: var(--danger);
+        }
+
+        .history-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .history-item {
+            background: rgba(10, 25, 47, 0.5);
             border-radius: 10px;
-            background: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80') center/cover;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary);
         }
-        
-        .btn-featured {
-            background-color: var(--accent);
+
+        .history-game {
+            font-weight: 600;
             color: white;
-            padding: 12px 25px;
-            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
-        
+
+        .history-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #bbdefb;
+        }
+
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: white;
+            background: rgba(10, 25, 47, 0.9);
             padding: 40px 0 20px;
-            margin-top: 60px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(100, 181, 246, 0.3);
         }
-        
-        .footer-grid {
+
+        .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
-        
+
         .footer-section h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
+            color: #bbdefb;
             position: relative;
             padding-bottom: 10px;
         }
-        
-        .footer-section h3:after {
-            content: '';
+
+        .footer-section h3::after {
+            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 3px;
-            background-color: var(--secondary);
+            background: var(--secondary);
         }
-        
-        .footer-section ul {
+
+        .footer-links {
             list-style: none;
         }
-        
-        .footer-section ul li {
+
+        .footer-links li {
             margin-bottom: 12px;
         }
-        
-        .footer-section ul li a {
-            color: #ccc;
+
+        .footer-links a {
+            color: #e3f2fd;
             text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .footer-section ul li a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
-        }
-        
-        .contact-info {
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 15px;
-            color: #ccc;
         }
-        
-        .social-icons {
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            gap: 12px;
         }
-        
-        .social-icons a {
-            display: inline-flex;
+
+        .contact-item {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s;
+            gap: 10px;
         }
-        
-        .social-icons a:hover {
-            background-color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
+            border-top: 1px solid rgba(100, 181, 246, 0.2);
+            color: #90a4ae;
             font-size: 0.9rem;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
-            .header-container {
+            .header-content {
                 flex-direction: column;
-                gap: 15px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .form-grid {
-                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .hero h2 {
                 font-size: 2.2rem;
             }
             
-            .featured-game {
+            .voucher-container {
                 flex-direction: column;
             }
             
-            .featured-image {
-                width: 100%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .user-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero {
-                padding: 50px 20px;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .payment-method {
-                min-width: 100px;
+            .history-panel {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                bottom: 100px;
             }
         }
     </style>
@@ -617,334 +609,461 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-gamepad"></i>
-                <h1>GarzMarket</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Beranda</a></li>
-                    <li><a href="#">Game</a></li>
-                    <li><a href="#">Voucher</a></li>
-                    <li><a href="#">Promo</a></li>
-                    <li><a href="#">Bantuan</a></li>
-                </ul>
-            </nav>
-            <div class="user-actions">
-                <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> Masuk</button>
-                <button class="btn btn-register"><i class="fas fa-user-plus"></i> Daftar</button>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>GarzMarket</h1>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary"><i class="fas fa-user"></i> Masuk</button>
+                    <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Daftar</button>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Top Up Game Online Termurah & Tercepat</h2>
-            <p>Top up Diamond, Voucher, dan Item Game dengan harga terbaik. Proses instan, aman, dan terpercaya. Garansi 100% uang kembali jika terjadi masalah.</p>
-            <button class="btn btn-hero">Beli Sekarang <i class="fas fa-arrow-right"></i></button>
-        </div>
-    </section>
-
-    <!-- Main Content -->
     <div class="container">
-        <!-- Featured Game -->
-        <div class="featured-game">
-            <div class="featured-content">
-                <h2>Free Fire MAX</h2>
-                <p>Top up Diamond Free Fire MAX dengan harga spesial! Dapatkan bonus tambahan untuk pembelian pertama. Transaksi cepat dan aman hanya di GarzMarket.</p>
-                <button class="btn btn-featured">Top Up Sekarang</button>
-            </div>
-            <div class="featured-image"></div>
-        </div>
-        
-        <!-- Games Section -->
-        <section class="games-section">
-            <div class="section-title">
-                <h2>Pilih Game Favoritmu</h2>
-            </div>
-            
-            <div class="games-grid">
-                <!-- Game cards will be dynamically generated -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Top Up Game Online Terlengkap</h2>
+                <p>Top up diamond, voucher, dan item game favoritmu dengan harga termurah dan proses instan hanya di GarzMarket. Transaksi aman, cepat, dan terpercaya!</p>
+                <button class="btn btn-primary"><i class="fas fa-fire"></i> Top Up Sekarang</button>
             </div>
         </section>
-        
-        <!-- Purchase Form Section -->
-        <section class="form-section">
-            <div class="section-title">
-                <h2>Isi Data Pembelian</h2>
-            </div>
-            
-            <div class="form-container">
-                <h3 class="form-title">Free Fire</h3>
-                
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="game-id">ID Game</label>
-                        <input type="text" id="game-id" class="form-control" placeholder="Masukkan ID Game">
-                    </div>
-                    <div class="form-group">
-                        <label for="server-id">Server ID</label>
-                        <input type="text" id="server-id" class="form-control" placeholder="Masukkan Server ID">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="Masukkan email Anda">
-                    </div>
-                    <div class="form-group">
-                        <label for="whatsapp">Nomor WhatsApp</label>
-                        <input type="tel" id="whatsapp" class="form-control" placeholder="Masukkan nomor WhatsApp">
-                    </div>
+
+        <!-- Game List -->
+        <h2 class="section-title">Pilih Game Favoritmu</h2>
+        <div class="game-grid">
+            <!-- Game cards will be dynamically generated -->
+        </div>
+
+        <!-- Voucher Section -->
+        <section class="voucher-section">
+            <div class="voucher-container">
+                <div class="voucher-info">
+                    <h3 class="voucher-title">Dapatkan Diskon Spesial!</h3>
+                    <p class="voucher-desc">Gunakan kode voucher di bawah ini untuk mendapatkan diskon spesial pada pembelian pertama Anda di GarzMarket.</p>
+                    <p>Kode Voucher: <span class="voucher-code">garzdiskon</span></p>
+                    <p><small>*Voucher berlaku untuk semua game dengan minimal pembelian Rp 50.000</small></p>
                 </div>
-                
-                <div class="form-group">
-                    <label>Pilih Jumlah Diamond</label>
-                    <div class="diamond-options">
-                        <!-- Diamond options will be dynamically generated -->
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Metode Pembayaran</label>
-                    <div class="payment-methods">
-                        <div class="payment-method selected">
-                            <i class="payment-icon fas fa-wallet"></i>
-                            <div>DANA</div>
-                        </div>
-                        <div class="payment-method">
-                            <i class="payment-icon fab fa-cc-mastercard"></i>
-                            <div>OVO</div>
-                        </div>
-                        <div class="payment-method">
-                            <i class="payment-icon fab fa-google-pay"></i>
-                            <div>GoPay</div>
-                        </div>
-                        <div class="payment-method">
-                            <i class="payment-icon fas fa-qrcode"></i>
-                            <div>QRIS</div>
-                        </div>
-                        <div class="payment-method">
-                            <i class="payment-icon fab fa-shopify"></i>
-                            <div>ShopeePay</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="voucher-section">
-                    <h3>Gunakan Voucher Diskon</h3>
+                <div class="voucher-form">
+                    <h3 class="voucher-title">Klaim Voucher Diskon</h3>
                     <div class="voucher-input">
-                        <input type="text" class="form-control" placeholder="Masukkan kode voucher">
-                        <button class="btn btn-apply">Terapkan</button>
+                        <input type="text" id="voucherCode" placeholder="Masukkan kode voucher">
+                        <button id="applyVoucher"><i class="fas fa-ticket-alt"></i> Gunakan</button>
                     </div>
+                    <p id="voucherMessage" style="margin-top: 15px; display: none;"></p>
                 </div>
-                
-                <div class="summary">
-                    <div class="summary-item">
-                        <span>Harga Diamond</span>
-                        <span>Rp 20.000</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Diskon Voucher</span>
-                        <span>- Rp 2.000</span>
-                    </div>
-                    <div class="summary-item total">
-                        <span>Total Pembayaran</span>
-                        <span>Rp 18.000</span>
-                    </div>
-                </div>
-                
-                <button class="btn btn-checkout">Bayar Sekarang</button>
             </div>
         </section>
     </div>
-    
+
+    <!-- Transaction History Button -->
+    <div class="history-btn" id="historyBtn">
+        <i class="fas fa-history"></i>
+    </div>
+
+    <!-- Transaction History Panel -->
+    <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+            <h3 class="history-title">Riwayat Transaksi</h3>
+            <button class="close-history" id="closeHistory">&times;</button>
+        </div>
+        <div class="history-list" id="historyList">
+            <!-- Transaction items will be added here -->
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-section">
                     <h3>Tentang GarzMarket</h3>
-                    <p>GarzMarket adalah platform top up game online terpercaya di Indonesia. Kami menyediakan layanan top up untuk berbagai game populer dengan harga terbaik.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <p>GarzMarket adalah platform top up game online terpercaya di Indonesia. Kami menyediakan layanan top up untuk berbagai game populer dengan harga terjangkau dan proses instan.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Layanan Kami</h3>
-                    <ul>
-                        <li><a href="#">Free Fire</a></li>
-                        <li><a href="#">Genshin Impact</a></li>
-                        <li><a href="#">VALORANT</a></li>
-                        <li><a href="#">PUBG Mobile</a></li>
-                        <li><a href="#">Call of Duty</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-diamond"></i> Top Up Diamond</a></li>
+                        <li><a href="#"><i class="fas fa-ticket-alt"></i> Voucher Game</a></li>
+                        <li><a href="#"><i class="fas fa-gift"></i> Item Game</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> Garansi Keamanan</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Kontak Kami</h3>
+                    <h3>Hubungi Kami</h3>
                     <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>cs@garzmarket.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+62 812-3456-7890</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta, Indonesia</span>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@garzmarket.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+62 812 3456 7890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Jakarta, Indonesia</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
             <div class="copyright">
-                &copy; 2023 GarzMarket. Hak Cipta Dilindungi.
+                &copy; 2023 GarzMarket. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        // Game data without Mobile Legends
+        // Game data
         const games = [
-            { id: 1, name: "Free Fire", diamonds: [100, 200, 500, 1000, 2000, 5000] },
-            { id: 2, name: "Garena", diamonds: [50, 100, 200, 500, 1000] },
-            { id: 3, name: "Genshin Impact", diamonds: [60, 300, 980, 1980, 3280, 6480] },
-            { id: 4, name: "Chamet", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 5, name: "Poppo Live", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 6, name: "Zenless Zone Zero", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 7, name: "Honor of Kings", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 8, name: "PUBG Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 9, name: "VALORANT", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 10, name: "Call of Duty: Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 11, name: "Call of Duty: Mobile Garena Shells Voucher", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 12, name: "HAGO", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 13, name: "EA SPORTS FC Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 14, name: "Undawn", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 15, name: "League of Legends", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 16, name: "Super Sus", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 17, name: "AOV", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 18, name: "Free Fire MAX", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 19, name: "Revelation: Infinite Journey", diamonds: [100, 500, 1000, 2000, 5000] }
+            {
+                id: 1,
+                name: "Mobile Legends: Bang Bang",
+                icon: "fas fa-mobile-alt",
+                diamonds: [
+                    { amount: "86 Diamonds", price: "Rp 20.000" },
+                    { amount: "172 Diamonds", price: "Rp 40.000" },
+                    { amount: "257 Diamonds", price: "Rp 60.000" },
+                    { amount: "344 Diamonds", price: "Rp 80.000" },
+                    { amount: "429 Diamonds", price: "Rp 100.000" },
+                    { amount: "514 Diamonds", price: "Rp 120.000" }
+                ]
+            },
+            {
+                id: 2,
+                name: "Free Fire",
+                icon: "fas fa-fire",
+                diamonds: [
+                    { amount: "60 Diamonds", price: "Rp 15.000" },
+                    { amount: "125 Diamonds", price: "Rp 30.000" },
+                    { amount: "250 Diamonds", price: "Rp 60.000" },
+                    { amount: "500 Diamonds", price: "Rp 120.000" },
+                    { amount: "800 Diamonds", price: "Rp 180.000" },
+                    { amount: "1500 Diamonds", price: "Rp 300.000" }
+                ]
+            },
+            {
+                id: 3,
+                name: "Genshin Impact",
+                icon: "fas fa-wind",
+                diamonds: [
+                    { amount: "60 Genesis", price: "Rp 25.000" },
+                    { amount: "300 Genesis", price: "Rp 100.000" },
+                    { amount: "980 Genesis", price: "Rp 250.000" },
+                    { amount: "1980 Genesis", price: "Rp 450.000" },
+                    { amount: "3280 Genesis", price: "Rp 700.000" },
+                    { amount: "6480 Genesis", price: "Rp 1.200.000" }
+                ]
+            },
+            {
+                id: 4,
+                name: "PUBG Mobile",
+                icon: "fas fa-crosshairs",
+                diamonds: [
+                    { amount: "60 UC", price: "Rp 15.000" },
+                    { amount: "325 UC", price: "Rp 80.000" },
+                    { amount: "660 UC", price: "Rp 150.000" },
+                    { amount: "1800 UC", price: "Rp 400.000" },
+                    { amount: "3850 UC", price: "Rp 800.000" },
+                    { amount: "8100 UC", price: "Rp 1.600.000" }
+                ]
+            },
+            {
+                id: 5,
+                name: "VALORANT",
+                icon: "fas fa-bullseye",
+                diamonds: [
+                    { amount: "125 VP", price: "Rp 25.000" },
+                    { amount: "420 VP", price: "Rp 80.000" },
+                    { amount: "700 VP", price: "Rp 130.000" },
+                    { amount: "1375 VP", price: "Rp 250.000" },
+                    { amount: "2400 VP", price: "Rp 400.000" },
+                    { amount: "4000 VP", price: "Rp 650.000" }
+                ]
+            },
+            {
+                id: 6,
+                name: "Call of Duty: Mobile",
+                icon: "fas fa-shield-alt",
+                diamonds: [
+                    { amount: "80 CP", price: "Rp 20.000" },
+                    { amount: "400 CP", price: "Rp 100.000" },
+                    { amount: "800 CP", price: "Rp 200.000" },
+                    { amount: "2000 CP", price: "Rp 500.000" },
+                    { amount: "4000 CP", price: "Rp 1.000.000" },
+                    { amount: "8000 CP", price: "Rp 2.000.000" }
+                ]
+            },
+            {
+                id: 7,
+                name: "Free Fire MAX",
+                icon: "fas fa-fire",
+                diamonds: [
+                    { amount: "60 Diamonds", price: "Rp 15.000" },
+                    { amount: "125 Diamonds", price: "Rp 30.000" },
+                    { amount: "250 Diamonds", price: "Rp 60.000" },
+                    { amount: "500 Diamonds", price: "Rp 120.000" },
+                    { amount: "800 Diamonds", price: "Rp 180.000" },
+                    { amount: "1500 Diamonds", price: "Rp 300.000" }
+                ]
+            },
+            {
+                id: 8,
+                name: "Zenless Zone Zero",
+                icon: "fas fa-gamepad",
+                diamonds: [
+                    { amount: "60 Boopons", price: "Rp 20.000" },
+                    { amount: "300 Boopons", price: "Rp 100.000" },
+                    { amount: "980 Boopons", price: "Rp 300.000" },
+                    { amount: "1980 Boopons", price: "Rp 600.000" },
+                    { amount: "3280 Boopons", price: "Rp 900.000" },
+                    { amount: "6480 Boopons", price: "Rp 1.800.000" }
+                ]
+            }
+        ];
+
+        // Additional games
+        const additionalGames = [
+            "Garena",
+            "Chamet",
+            "Poppo Live",
+            "Honor of Kings",
+            "Call of Duty: Mobile Garena Shells Voucher",
+            "HAGO",
+            "EA SPORTS FC Mobile",
+            "Undawn",
+            "League of Legends",
+            "Super Sus",
+            "AOV",
+            "Revelation: Infinite Journey"
+        ];
+
+        // Function to generate game cards
+        function generateGameCards() {
+            const gameGrid = document.querySelector('.game-grid');
+            
+            // Add main games
+            games.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+                gameCard.innerHTML = `
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="${game.icon}"></i>
+                        </div>
+                        <h3 class="game-title">${game.name}</h3>
+                    </div>
+                    <div class="game-body">
+                        <div class="input-group">
+                            <label for="id-${game.id}"><i class="fas fa-id-card"></i> ID Game</label>
+                            <input type="text" id="id-${game.id}" placeholder="Masukkan ID Game">
+                        </div>
+                        <div class="input-group">
+                            <label for="email-${game.id}"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email-${game.id}" placeholder="Masukkan email">
+                        </div>
+                        <div class="input-group">
+                            <label for="wa-${game.id}"><i class="fab fa-whatsapp"></i> Nomor WhatsApp</label>
+                            <input type="text" id="wa-${game.id}" placeholder="Masukkan nomor WA">
+                        </div>
+                        
+                        <div class="diamond-options">
+                            <div class="diamond-title">
+                                <i class="fas fa-diamond"></i> Pilih Jumlah Diamond
+                            </div>
+                            <div class="diamond-grid">
+                                ${game.diamonds.map(diamond => `
+                                    <div class="diamond-option">
+                                        <div class="diamond-amount">${diamond.amount}</div>
+                                        <div class="diamond-price">${diamond.price}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <button class="buy-button" data-game="${game.name}">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                        </button>
+                    </div>
+                `;
+                gameGrid.appendChild(gameCard);
+            });
+            
+            // Add additional games
+            additionalGames.forEach((game, index) => {
+                const gameId = games.length + index + 1;
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+                gameCard.innerHTML = `
+                    <div class="game-header">
+                        <div class="game-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="game-title">${game}</h3>
+                    </div>
+                    <div class="game-body">
+                        <div class="input-group">
+                            <label for="id-${gameId}"><i class="fas fa-id-card"></i> ID Game</label>
+                            <input type="text" id="id-${gameId}" placeholder="Masukkan ID Game">
+                        </div>
+                        <div class="input-group">
+                            <label for="email-${gameId}"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email-${gameId}" placeholder="Masukkan email">
+                        </div>
+                        <div class="input-group">
+                            <label for="wa-${gameId}"><i class="fab fa-whatsapp"></i> Nomor WhatsApp</label>
+                            <input type="text" id="wa-${gameId}" placeholder="Masukkan nomor WA">
+                        </div>
+                        
+                        <div class="diamond-options">
+                            <div class="diamond-title">
+                                <i class="fas fa-diamond"></i> Pilih Jumlah Diamond
+                            </div>
+                            <div class="diamond-grid">
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">100 Diamonds</div>
+                                    <div class="diamond-price">Rp 25.000</div>
+                                </div>
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">250 Diamonds</div>
+                                    <div class="diamond-price">Rp 60.000</div>
+                                </div>
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">500 Diamonds</div>
+                                    <div class="diamond-price">Rp 120.000</div>
+                                </div>
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">1000 Diamonds</div>
+                                    <div class="diamond-price">Rp 240.000</div>
+                                </div>
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">2000 Diamonds</div>
+                                    <div class="diamond-price">Rp 480.000</div>
+                                </div>
+                                <div class="diamond-option">
+                                    <div class="diamond-amount">5000 Diamonds</div>
+                                    <div class="diamond-price">Rp 1.200.000</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="buy-button" data-game="${game}">
+                            <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                        </button>
+                    </div>
+                `;
+                gameGrid.appendChild(gameCard);
+            });
+        }
+
+        // Voucher functionality
+        document.getElementById('applyVoucher').addEventListener('click', function() {
+            const voucherCode = document.getElementById('voucherCode').value;
+            const messageElement = document.getElementById('voucherMessage');
+            
+            if (voucherCode.toLowerCase() === 'garzdiskon') {
+                messageElement.textContent = '✅ Voucher berhasil digunakan! Anda mendapatkan diskon 15%.';
+                messageElement.style.color = '#4caf50';
+                messageElement.style.display = 'block';
+            } else {
+                messageElement.textContent = '❌ Kode voucher tidak valid. Silakan coba lagi.';
+                messageElement.style.color = '#f44336';
+                messageElement.style.display = 'block';
+            }
+        });
+
+        // Transaction history functionality
+        const historyBtn = document.getElementById('historyBtn');
+        const historyPanel = document.getElementById('historyPanel');
+        const closeHistory = document.getElementById('closeHistory');
+        const historyList = document.getElementById('historyList');
+        
+        // Sample transaction data
+        const sampleTransactions = [
+            { game: "Mobile Legends: Bang Bang", amount: "172 Diamonds", price: "Rp 40.000", date: "5 Juli 2023" },
+            { game: "Free Fire", amount: "250 Diamonds", price: "Rp 60.000", date: "4 Juli 2023" },
+            { game: "Genshin Impact", amount: "300 Genesis", price: "Rp 100.000", date: "3 Juli 2023" },
+            { game: "PUBG Mobile", amount: "325 UC", price: "Rp 80.000", date: "2 Juli 2023" },
+            { game: "VALORANT", amount: "420 VP", price: "Rp 80.000", date: "1 Juli 2023" }
         ];
         
-        // Prices for diamonds (base price per diamond)
-        const diamondPrices = {
-            50: 8000,
-            60: 18000,
-            100: 15000,
-            200: 25000,
-            300: 45000,
-            500: 65000,
-            980: 195000,
-            1000: 130000,
-            1980: 395000,
-            2000: 260000,
-            3280: 655000,
-            5000: 650000,
-            6480: 1295000
-        };
+        // Populate sample transactions
+        function populateSampleTransactions() {
+            sampleTransactions.forEach(transaction => {
+                const transactionItem = document.createElement('div');
+                transactionItem.className = 'history-item';
+                transactionItem.innerHTML = `
+                    <div class="history-game">${transaction.game}</div>
+                    <div class="history-details">
+                        <span>${transaction.amount}</span>
+                        <span>${transaction.price}</span>
+                    </div>
+                    <div class="history-details">
+                        <span>${transaction.date}</span>
+                        <span><i class="fas fa-check-circle" style="color: #4caf50;"></i> Selesai</span>
+                    </div>
+                `;
+                historyList.appendChild(transactionItem);
+            });
+        }
         
-        // Generate game cards
-        const gamesGrid = document.querySelector('.games-grid');
-        
-        games.forEach(game => {
-            const gameCard = document.createElement('div');
-            gameCard.className = 'game-card';
-            gameCard.innerHTML = `
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/300/150?random=${game.id}');"></div>
-                <div class="game-content">
-                    <h3>${game.name}</h3>
-                    <p>Top up diamond dengan harga terbaik</p>
-                    <button class="btn btn-game" data-game="${game.id}">Pilih</button>
-                </div>
-            `;
-            gamesGrid.appendChild(gameCard);
+        // Toggle history panel
+        historyBtn.addEventListener('click', function() {
+            historyPanel.style.display = 'block';
         });
         
-        // Generate diamond options for Free Fire
-        const diamondOptions = document.querySelector('.diamond-options');
-        const currentGame = games[0]; // Free Fire as default
+        closeHistory.addEventListener('click', function() {
+            historyPanel.style.display = 'none';
+        });
         
-        currentGame.diamonds.forEach(diamond => {
-            const price = diamondPrices[diamond] || diamond * 150; // Fallback price
-            const formattedPrice = new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR'
-            }).format(price);
+        // Buy button functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('buy-button')) {
+                const gameName = e.target.getAttribute('data-game');
+                alert(`Pembelian untuk ${gameName} berhasil diproses! Silakan cek email untuk instruksi selanjutnya.`);
+                
+                // Add to transaction history
+                const newTransaction = document.createElement('div');
+                newTransaction.className = 'history-item';
+                newTransaction.innerHTML = `
+                    <div class="history-game">${gameName}</div>
+                    <div class="history-details">
+                        <span>100 Diamonds</span>
+                        <span>Rp 25.000</span>
+                    </div>
+                    <div class="history-details">
+                        <span>6 Juli 2023</span>
+                        <span><i class="fas fa-sync-alt" style="color: #ff9800;"></i> Proses</span>
+                    </div>
+                `;
+                historyList.insertBefore(newTransaction, historyList.firstChild);
+            }
+        });
+        
+        // Initialize the page
+        window.addEventListener('DOMContentLoaded', function() {
+            generateGameCards();
+            populateSampleTransactions();
             
-            const diamondCard = document.createElement('div');
-            diamondCard.className = 'diamond-card';
-            diamondCard.innerHTML = `
-                <h4>${diamond} Diamond</h4>
-                <p>${formattedPrice}</p>
-            `;
-            diamondOptions.appendChild(diamondCard);
-        });
-        
-        // Add event listeners
-        document.querySelectorAll('.diamond-card').forEach(card => {
-            card.addEventListener('click', function() {
-                document.querySelectorAll('.diamond-card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                
-                // Update summary
-                const price = this.querySelector('p').textContent.replace('Rp', '').replace('.', '').trim();
-                const numericPrice = parseInt(price);
-                document.querySelector('.summary-item:first-child span:last-child').textContent = `Rp ${numericPrice.toLocaleString('id-ID')}`;
-                
-                // Apply 10% discount for demo
-                const discount = Math.floor(numericPrice * 0.1);
-                document.querySelector('.summary-item:nth-child(2) span:last-child').textContent = `- Rp ${discount.toLocaleString('id-ID')}`;
-                
-                const total = numericPrice - discount;
-                document.querySelector('.total span:last-child').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+            // Add event listeners to diamond options
+            document.querySelectorAll('.diamond-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove active class from siblings
+                    const siblings = this.parentElement.children;
+                    for (let i = 0; i < siblings.length; i++) {
+                        siblings[i].classList.remove('active');
+                    }
+                    
+                    // Add active class to clicked option
+                    this.classList.add('active');
+                    this.style.borderColor = '#64b5f6';
+                    this.style.background = 'rgba(26, 115, 232, 0.3)';
+                });
             });
-        });
-        
-        document.querySelectorAll('.payment-method').forEach(method => {
-            method.addEventListener('click', function() {
-                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
-        
-        // Set first diamond and payment method as selected by default
-        document.querySelector('.diamond-card').classList.add('selected');
-        
-        // Apply voucher button
-        document.querySelector('.btn-apply').addEventListener('click', function() {
-            alert('Voucher berhasil diterapkan! Diskon tambahan 5% telah ditambahkan.');
-        });
-        
-        // Login/Register buttons
-        document.querySelector('.btn-login').addEventListener('click', function() {
-            alert('Fitur masuk/daftar untuk memantau dan menyimpan transaksi akan ditampilkan di sini.');
-        });
-        
-        document.querySelector('.btn-register').addEventListener('click', function() {
-            alert('Fitur masuk/daftar untuk memantau dan menyimpan transaksi akan ditampilkan di sini.');
-        });
-        
-        // Checkout button
-        document.querySelector('.btn-checkout').addEventListener('click', function() {
-            const game = document.querySelector('.form-title').textContent;
-            const total = document.querySelector('.total span:last-child').textContent;
-            alert(`Pembelian ${game} berhasil! Total pembayaran ${total}. Detail transaksi akan dikirim melalui email dan WhatsApp.`);
-        });
-        
-        // Hero button
-        document.querySelector('.btn-hero').addEventListener('click', function() {
-            document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'});
-        });
-        
-        // Featured game button
-        document.querySelector('.btn-featured').addEventListener('click', function() {
-            document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'});
         });
     </script>
 </body>
