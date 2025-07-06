@@ -18,6 +18,7 @@
             --gray: #f5f5f5;
             --text: #333;
             --text-light: #757575;
+            --accent: #ff6b6b;
         }
         
         * {
@@ -427,6 +428,48 @@
             transform: translateY(-2px);
         }
         
+        /* Featured Game Banner */
+        .featured-game {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--dark) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-content {
+            flex: 1;
+        }
+        
+        .featured-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .featured-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .featured-image {
+            flex: 1;
+            height: 250px;
+            border-radius: 10px;
+            background: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80') center/cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-featured {
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -537,6 +580,14 @@
             .hero h2 {
                 font-size: 2.2rem;
             }
+            
+            .featured-game {
+                flex-direction: column;
+            }
+            
+            .featured-image {
+                width: 100%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -555,6 +606,10 @@
             
             .section-title h2 {
                 font-size: 2rem;
+            }
+            
+            .payment-method {
+                min-width: 100px;
             }
         }
     </style>
@@ -594,6 +649,16 @@
 
     <!-- Main Content -->
     <div class="container">
+        <!-- Featured Game -->
+        <div class="featured-game">
+            <div class="featured-content">
+                <h2>Free Fire MAX</h2>
+                <p>Top up Diamond Free Fire MAX dengan harga spesial! Dapatkan bonus tambahan untuk pembelian pertama. Transaksi cepat dan aman hanya di GarzMarket.</p>
+                <button class="btn btn-featured">Top Up Sekarang</button>
+            </div>
+            <div class="featured-image"></div>
+        </div>
+        
         <!-- Games Section -->
         <section class="games-section">
             <div class="section-title">
@@ -612,7 +677,7 @@
             </div>
             
             <div class="form-container">
-                <h3 class="form-title">Mobile Legends: Bang Bang</h3>
+                <h3 class="form-title">Free Fire</h3>
                 
                 <div class="form-grid">
                     <div class="form-group">
@@ -644,7 +709,7 @@
                     <label>Metode Pembayaran</label>
                     <div class="payment-methods">
                         <div class="payment-method selected">
-                            <i class="payment-icon fab fa-cc-visa"></i>
+                            <i class="payment-icon fas fa-wallet"></i>
                             <div>DANA</div>
                         </div>
                         <div class="payment-method">
@@ -652,7 +717,7 @@
                             <div>OVO</div>
                         </div>
                         <div class="payment-method">
-                            <i class="payment-icon fab fa-cc-paypal"></i>
+                            <i class="payment-icon fab fa-google-pay"></i>
                             <div>GoPay</div>
                         </div>
                         <div class="payment-method">
@@ -660,7 +725,7 @@
                             <div>QRIS</div>
                         </div>
                         <div class="payment-method">
-                            <i class="payment-icon fab fa-cc-amazon-pay"></i>
+                            <i class="payment-icon fab fa-shopify"></i>
                             <div>ShopeePay</div>
                         </div>
                     </div>
@@ -712,11 +777,11 @@
                 <div class="footer-section">
                     <h3>Layanan Kami</h3>
                     <ul>
-                        <li><a href="#">Mobile Legends</a></li>
                         <li><a href="#">Free Fire</a></li>
                         <li><a href="#">Genshin Impact</a></li>
                         <li><a href="#">VALORANT</a></li>
                         <li><a href="#">PUBG Mobile</a></li>
+                        <li><a href="#">Call of Duty</a></li>
                     </ul>
                 </div>
                 
@@ -728,11 +793,11 @@
                     </div>
                     <div class="contact-info">
                         <i class="fab fa-whatsapp"></i>
-                        <span>+62895402128077</span>
+                        <span>+62 812-3456-7890</span>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Purwokerto,banyumas, Indonesia</span>
+                        <span>Jakarta, Indonesia</span>
                     </div>
                 </div>
             </div>
@@ -744,47 +809,39 @@
     </footer>
 
     <script>
-        // Game data
+        // Game data without Mobile Legends
         const games = [
-            { id: 1, name: "Mobile Legends: Bang Bang", diamonds: [5, 12, 50, 70, 140, 355, 720, 1450] },
-            { id: 2, name: "Free Fire", diamonds: [100, 200, 500, 1000, 2000, 5000] },
-            { id: 3, name: "Garena", diamonds: [50, 100, 200, 500, 1000] },
-            { id: 4, name: "Genshin Impact", diamonds: [60, 300, 980, 1980, 3280, 6480] },
-            { id: 5, name: "Chamet", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 6, name: "Poppo Live", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 7, name: "Zenless Zone Zero", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 8, name: "Honor of Kings", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 9, name: "PUBG Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 10, name: "VALORANT", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 11, name: "Call of Duty: Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 12, name: "Call of Duty: Mobile Garena Shells Voucher", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 13, name: "HAGO", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 14, name: "EA SPORTS FC Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 15, name: "Undawn", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 16, name: "League of Legends", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 17, name: "Super Sus", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 18, name: "AOV", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 19, name: "Free Fire MAX", diamonds: [100, 500, 1000, 2000, 5000] },
-            { id: 20, name: "Revelation: Infinite Journey", diamonds: [100, 500, 1000, 2000, 5000] }
+            { id: 1, name: "Free Fire", diamonds: [100, 200, 500, 1000, 2000, 5000] },
+            { id: 2, name: "Garena", diamonds: [50, 100, 200, 500, 1000] },
+            { id: 3, name: "Genshin Impact", diamonds: [60, 300, 980, 1980, 3280, 6480] },
+            { id: 4, name: "Chamet", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 5, name: "Poppo Live", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 6, name: "Zenless Zone Zero", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 7, name: "Honor of Kings", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 8, name: "PUBG Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 9, name: "VALORANT", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 10, name: "Call of Duty: Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 11, name: "Call of Duty: Mobile Garena Shells Voucher", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 12, name: "HAGO", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 13, name: "EA SPORTS FC Mobile", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 14, name: "Undawn", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 15, name: "League of Legends", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 16, name: "Super Sus", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 17, name: "AOV", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 18, name: "Free Fire MAX", diamonds: [100, 500, 1000, 2000, 5000] },
+            { id: 19, name: "Revelation: Infinite Journey", diamonds: [100, 500, 1000, 2000, 5000] }
         ];
         
         // Prices for diamonds (base price per diamond)
         const diamondPrices = {
-            5: 2000,
-            12: 4500,
-            50: 15000,
+            50: 8000,
             60: 18000,
-            70: 20000,
             100: 15000,
-            140: 35000,
             200: 25000,
             300: 45000,
-            355: 85000,
             500: 65000,
-            720: 170000,
             980: 195000,
             1000: 130000,
-            1450: 365000,
             1980: 395000,
             2000: 260000,
             3280: 655000,
@@ -809,9 +866,9 @@
             gamesGrid.appendChild(gameCard);
         });
         
-        // Generate diamond options
+        // Generate diamond options for Free Fire
         const diamondOptions = document.querySelector('.diamond-options');
-        const currentGame = games[0]; // Mobile Legends as default
+        const currentGame = games[0]; // Free Fire as default
         
         currentGame.diamonds.forEach(diamond => {
             const price = diamondPrices[diamond] || diamond * 150; // Fallback price
@@ -834,6 +891,18 @@
             card.addEventListener('click', function() {
                 document.querySelectorAll('.diamond-card').forEach(c => c.classList.remove('selected'));
                 this.classList.add('selected');
+                
+                // Update summary
+                const price = this.querySelector('p').textContent.replace('Rp', '').replace('.', '').trim();
+                const numericPrice = parseInt(price);
+                document.querySelector('.summary-item:first-child span:last-child').textContent = `Rp ${numericPrice.toLocaleString('id-ID')}`;
+                
+                // Apply 10% discount for demo
+                const discount = Math.floor(numericPrice * 0.1);
+                document.querySelector('.summary-item:nth-child(2) span:last-child').textContent = `- Rp ${discount.toLocaleString('id-ID')}`;
+                
+                const total = numericPrice - discount;
+                document.querySelector('.total span:last-child').textContent = `Rp ${total.toLocaleString('id-ID')}`;
             });
         });
         
@@ -847,6 +916,11 @@
         // Set first diamond and payment method as selected by default
         document.querySelector('.diamond-card').classList.add('selected');
         
+        // Apply voucher button
+        document.querySelector('.btn-apply').addEventListener('click', function() {
+            alert('Voucher berhasil diterapkan! Diskon tambahan 5% telah ditambahkan.');
+        });
+        
         // Login/Register buttons
         document.querySelector('.btn-login').addEventListener('click', function() {
             alert('Fitur masuk/daftar untuk memantau dan menyimpan transaksi akan ditampilkan di sini.');
@@ -858,7 +932,19 @@
         
         // Checkout button
         document.querySelector('.btn-checkout').addEventListener('click', function() {
-            alert('Pembelian berhasil! Detail transaksi akan dikirim melalui email dan WhatsApp.');
+            const game = document.querySelector('.form-title').textContent;
+            const total = document.querySelector('.total span:last-child').textContent;
+            alert(`Pembelian ${game} berhasil! Total pembayaran ${total}. Detail transaksi akan dikirim melalui email dan WhatsApp.`);
+        });
+        
+        // Hero button
+        document.querySelector('.btn-hero').addEventListener('click', function() {
+            document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'});
+        });
+        
+        // Featured game button
+        document.querySelector('.btn-featured').addEventListener('click', function() {
+            document.querySelector('.form-section').scrollIntoView({behavior: 'smooth'});
         });
     </script>
 </body>
